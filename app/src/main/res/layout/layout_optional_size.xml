@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="size"
+            type="xyz.manzodev.themanzocoffee.Models.Product.Optional"></variable>
+    </data>
+    <RelativeLayout
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_size"
+        android:background="@drawable/underline_layout">
+
+        <RadioButton
+            android:layout_marginLeft="-4dp"
+            android:clickable="false"
+            android:id="@+id/rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimary"/>
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:layout_centerInParent="true"
+            android:text="@{size.name}"
+            android:layout_toRightOf="@+id/rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:text="@{size.convertToString(size.price)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</layout>

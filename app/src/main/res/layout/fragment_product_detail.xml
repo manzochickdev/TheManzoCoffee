@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="product"
+            type="xyz.manzodev.themanzocoffee.Models.Product">
+        </variable>
+        <variable
+            name="productViewModel"
+            type="xyz.manzodev.themanzocoffee.ViewModel.ProductViewModel"></variable>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ProductDetailFragment"
+        android:background="@color/colorWhite">
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    getImage="@{product.imgUrl}"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+                <TextView
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:layout_marginLeft="12dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="@{product.name}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <FrameLayout
+                    android:background="@drawable/two_side_line_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_marginTop="1dp"
+                        android:id="@+id/rvOptional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView></FrameLayout>
+                <LinearLayout
+                    android:layout_marginTop="16dp"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_black"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:padding="10dp"
+                        setFont="@{@string/icon}"
+                        android:onClick="@{()->productViewModel.decreaseQuantity()}"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:text=""
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="16dp"
+                        android:text="@{productViewModel.quantity}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:padding="8dp"
+                        setFont="@{@string/icon}"
+                        android:layout_marginLeft="16dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:onClick="@{()->productViewModel.increaseQuantity()}"
+                        android:text=""
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <android.support.v7.widget.CardView
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="8dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="24dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:textColor="@color/colorWhite"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->productViewModel.addToCart(productViewModel)}"
+                    android:text="Add to cart"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_marginRight="12dp"
+                    android:text="@{productViewModel.price}"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</layout>

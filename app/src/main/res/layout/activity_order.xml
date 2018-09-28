@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".OrderActivity"
+        android:id="@+id/layout_container"
+        android:background="@color/colorWhite">
+        <fragment
+            android:id="@+id/product_fragment"
+            android:layout_above="@id/tvCart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="xyz.manzodev.themanzocoffee.ProductFragment"></fragment>
+        <TextView
+            android:id="@+id/tvCart"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:text="Cart Holder"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </RelativeLayout>
+</layout>

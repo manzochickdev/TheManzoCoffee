@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="selected"
+            type="Integer"></variable>
+        <variable
+            name="bottomBarFragment"
+            type="xyz.manzodev.themanzocoffee.BottomBarFragment"></variable>
+        <variable
+            name="iMainActivity"
+            type="xyz.manzodev.themanzocoffee.IMainActivity"></variable>
+    </data>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".BottomBarFragment"
+        android:background="@color/colorWhite">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorDivider"></View>
+        <LinearLayout
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:onClick="@{()->bottomBarFragment.setSelectedItem(1)}">
+                <TextView
+                    android:textSize="18sp"
+                    android:gravity="center_vertical"
+                    setFont="@{@string/icon}"
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{selected==1 ? @color/colorPrimary : @color/colorText}"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="News"
+                    android:textAlignment="center"
+                    android:textColor="@{selected==1 ? @color/colorPrimary : @color/colorText}"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:onClick="@{()->bottomBarFragment.setSelectedItem(2)}">
+                <TextView
+                    android:textSize="18sp"
+                    android:gravity="center_vertical"
+                    setFont="@{@string/icon}"
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{selected==2 ? @color/colorPrimary : @color/colorText}"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order"
+                    android:textAlignment="center"
+                    android:textColor="@{selected==2 ? @color/colorPrimary : @color/colorText}"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:onClick="@{()->bottomBarFragment.setSelectedItem(3)}">
+                <TextView
+                    android:textSize="18sp"
+                    android:gravity="center_vertical"
+                    setFont="@{@string/icon}"
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{selected==3 ? @color/colorPrimary : @color/colorText}"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Place"
+                    android:textAlignment="center"
+                    android:textColor="@{selected==3 ? @color/colorPrimary : @color/colorText}"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:onClick="@{()->bottomBarFragment.setSelectedItem(4)}">
+                <TextView
+                    android:textSize="18sp"
+                    android:gravity="center_vertical"
+                    setFont="@{@string/icon}"
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{selected==4 ? @color/colorPrimary : @color/colorText}"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account"
+                    android:textAlignment="center"
+                    android:textColor="@{selected==4 ? @color/colorPrimary : @color/colorText}"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="iMapPickerActivity"
+            type="xyz.manzodev.themanzocoffee.Interface.IMapPickerActivity"></variable>
+        <variable
+            name="location"
+            type="String"></variable>
+    </data>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapPickerFragment">
+
+        <fragment
+            android:id="@+id/fr_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="xyz.manzodev.themanzocoffee.MapFragment"></fragment>
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:cardCornerRadius="12dp">
+            <TextView
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="@{location}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLines="2"/>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/pinned"
+            android:layout_gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp"
+            setFont="@{@string/icon}"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.CardView
+            app:cardBackgroundColor="@color/colorPrimary"
+            android:layout_gravity="bottom"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:cardCornerRadius="12dp">
+            <Button
+                android:onClick="@{()->iMapPickerActivity.onAddressBack(location)}"
+                android:background="@android:color/transparent"
+                android:textColor="@color/colorWhite"
+                android:text="Deliver here"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v7.widget.CardView>
+
+
+    </FrameLayout>
+</layout>

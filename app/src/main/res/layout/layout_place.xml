@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"></import>
+        <variable
+            name="place"
+            type="xyz.manzodev.themanzocoffee.Models.Place"></variable>
+        <variable
+            name="iMainActivity"
+            type="xyz.manzodev.themanzocoffee.IMainActivity"></variable>
+        <variable
+            name="isSelected"
+            type="Boolean"></variable>
+
+    </data>
+    <android.support.v7.widget.CardView
+        app:cardCornerRadius="8dp"
+        android:id="@+id/layout_container"
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                getImage="@{place.imgUrl}"/>
+            <FrameLayout
+
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:textStyle="bold"
+                        android:text="@{place.district}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:ellipsize="marquee"
+                        android:text="@{place.name}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <FrameLayout
+                    android:background="@color/colorWhite"
+                    android:visibility="@{isSelected ? View.VISIBLE : View.GONE}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:onClick="@{()->iMainActivity.getDirection(place.address)}"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:text="Get Direction"
+                        android:background="@drawable/rounded_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </FrameLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

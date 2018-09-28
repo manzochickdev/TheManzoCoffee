@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="iMainActivity"
+            type="xyz.manzodev.themanzocoffee.IMainActivity"></variable>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PlaceFragment">
+        <fragment
+            android:id="@+id/fr_map"
+            android:tag="@string/fragment_map_tag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="xyz.manzodev.themanzocoffee.MapFragment"></fragment>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvPlace"
+            android:layout_marginBottom="72dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        <ImageButton
+            android:onClick="@{()->iMainActivity.getCurrentLocation()}"
+            android:layout_above="@id/rvPlace"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_my_location_black_24dp"
+            android:background="@drawable/circle_button"
+            android:layout_width="36dp"
+            android:layout_height="36dp" />
+
+    </RelativeLayout>
+</layout>

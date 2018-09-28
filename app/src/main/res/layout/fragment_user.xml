@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="user"
+            type="xyz.manzodev.themanzocoffee.Models.User"></variable>
+        <variable
+            name="iMainActivity"
+            type="xyz.manzodev.themanzocoffee.IMainActivity"></variable>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UserFragment"
+        android:onClick="@{()->iMainActivity.passUser(user)}"
+        android:background="@color/colorWhite"
+        >
+        <LinearLayout
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="12dp">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+                <ImageView
+                    getImage="@{user.img}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:src="@drawable/circle_frames"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+
+            <TextView
+                android:layout_marginLeft="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{user.name}" />
+        </LinearLayout>
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorDivider"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"></View>
+    </RelativeLayout>
+</layout>

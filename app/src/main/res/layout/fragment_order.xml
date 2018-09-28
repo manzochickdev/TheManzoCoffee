@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="iMainActivity"
+            type="xyz.manzodev.themanzocoffee.IMainActivity"></variable>
+        <variable
+            name="location"
+            type="String"></variable>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".OrderFragment"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:background="@drawable/underline_layout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:onClick="@{()->iMainActivity.pickLocation()}">
+            <TextView
+                android:layout_marginLeft="26dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center"
+                setFont="@{@string/icon}"
+                android:textSize="20sp"
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:orientation="vertical">
+                <TextView
+                    android:text="Deliver to"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:maxLines="1"
+                    android:layout_marginRight="12dp"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{location!=null ? location : @string/location_holder}"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/underline_layout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:weightSum="2"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal">
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    setFont="@{@string/icon}"
+                    android:textSize="20sp"
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="Promotion"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pick coupon"/>
+                </LinearLayout>
+            </LinearLayout>
+            <FrameLayout
+                android:background="@color/colorDivider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"></FrameLayout>
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal">
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    setFont="@{@string/icon}"
+                    android:textSize="20sp"
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="Deliver Time"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time Holder"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:layout_margin="12dp"
+            android:id="@+id/rvMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+</layout>

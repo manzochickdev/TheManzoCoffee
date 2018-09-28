@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="product"
+            type="xyz.manzodev.themanzocoffee.Models.Product"></variable>
+        <variable
+            name="iOrderActivity"
+            type="xyz.manzodev.themanzocoffee.IOrderActivity"></variable>
+    </data>
+    <RelativeLayout
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->iOrderActivity.inflateProduct(product)}"
+        android:background="@drawable/underline_layout">
+
+        <ImageView
+            getImage="@{product.imgUrl}"
+            android:id="@+id/iv"
+            android:layout_width="75dp"
+            android:layout_height="75dp" />
+        <LinearLayout
+            android:layout_toRightOf="@id/iv"
+            android:layout_marginLeft="12dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:text="@{product.name}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textStyle="bold"
+                android:text="@{product.priceToString(product.price)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:layout_marginRight="4dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp"
+            setFont="@{@string/icon}"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">TheManzoCoffee</string>
+    <string name="userID">UserID</string>
+    <string name="user">User</string>
+    <string name="Url">URL</string>
+    <string name="nullValue">NULL</string>
+    <string name="location_holder">Pick a location</string>
+
+
+    <string name="fragment_home_tag">FragmentHome</string>
+    <string name="fragment_place_tag">FragmentPlace</string>
+    <string name="fragment_user_info_tag">FragmentUserInfo</string>
+    <string name="fragment_webview_tag">FragmentWebview</string>
+    <string name="fragment_order_tag">FragmentOrder</string>
+    <string name="fragment_account_tag">FragmentAccount</string>
+    <string name="fragment_product_tag">FragmentProduct</string>
+    <string name="fragment_product_detail_tag">FragmentProductDetail</string>
+    <string name="fragment_cart_tag">FragmentCart</string>
+    <string name="fragment_map_tag">FragmentMap</string>
+    <string name="fragment_map_picker_tag">FragmentMapPicker</string>
+
+
+    <string name="facebook_app_id">2108803705830334</string>
+    <string name="fb_login_protocol_scheme">fb2108803705830334</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="icon">Font Awesome 5 Free-Solid-900.otf</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="category"
+            type="String"></variable>
+        <variable
+            name="iMainActivity"
+            type="xyz.manzodev.themanzocoffee.IMainActivity"></variable>
+    </data>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->iMainActivity.getProduct()}">
+
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp">
+            <ImageView
+                android:scaleType="centerCrop"
+                getImage="@{category}"
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
+            <!--<TextView-->
+                <!--android:text="@{category}"-->
+                <!--android:textAlignment="center"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</layout>
