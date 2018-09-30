@@ -169,6 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"></View>
         <LinearLayout
+            android:id="@+id/layout_name"
             android:background="@color/colorWhite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -179,7 +180,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <EditText
-                android:text="@={user.name}"
+                android:text="@{user.name}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>

@@ -21,6 +21,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import xyz.manzodev.themanzocoffee.BR;
+import xyz.manzodev.themanzocoffee.IOrderActivity;
 import xyz.manzodev.themanzocoffee.Models.Product;
 
 public class ProductViewModel extends BaseObservable{
@@ -127,8 +128,20 @@ public class ProductViewModel extends BaseObservable{
             Log.d("OK", "addToCart: "+s);
         }
 
-
+        //todo add onback listener
+        IOrderActivity iOrderActivity = (IOrderActivity) context;
+        iOrderActivity.onBackListener();
     }
+
+    //todo y tuong time picker
+    /*1 fragment ui chua pick ngay + gio
+    * 1 dialpg fragment chứa recycle view
+    * dùng hàm gettime lấy ngày + giờ hiện tại
+    * for (i= (7<giờ hiện tại<21 ?? giờ hiện tại : 7 ) ;i<21;i++)
+    * add(i){
+    * String time = (i):00 --> (i):30;
+    * }*/
+
 
     public Product getProduct(){return product;}
 

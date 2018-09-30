@@ -18,6 +18,7 @@
     <string name="fragment_cart_tag">FragmentCart</string>
     <string name="fragment_map_tag">FragmentMap</string>
     <string name="fragment_map_picker_tag">FragmentMapPicker</string>
+    <string name="dialog_fragment_edit">DialogFragmentEdit</string>
 
 
     <string name="facebook_app_id">2108803705830334</string>

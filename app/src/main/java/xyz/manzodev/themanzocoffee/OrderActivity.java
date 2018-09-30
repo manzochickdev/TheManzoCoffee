@@ -45,4 +45,9 @@ public class OrderActivity extends AppCompatActivity implements IOrderActivity {
     public void updateCart() {
 
     }
+
+    @Override
+    public void onBackListener() {
+        onBackPressed();
+    }
 }

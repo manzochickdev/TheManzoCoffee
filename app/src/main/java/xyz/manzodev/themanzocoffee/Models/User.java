@@ -1,8 +1,13 @@
 package xyz.manzodev.themanzocoffee.Models;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+import com.android.databinding.library.baseAdapters.BR;
+
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class User extends BaseObservable implements Serializable {
     public String name, img ,dob,phone;
     public Boolean sex;
 
@@ -17,6 +22,7 @@ public class User implements Serializable {
         this.sex = sex;
     }
 
+    @Bindable
     public String getName() {
         return name;
     }
@@ -37,8 +43,10 @@ public class User implements Serializable {
         return sex;
     }
 
+
     public void setName(String name) {
         this.name = name;
+        notifyPropertyChanged(BR.name);
     }
 
     public void setImg(String img) {

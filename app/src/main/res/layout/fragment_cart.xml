@@ -12,6 +12,12 @@
             android:id="@+id/rvItemCart"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        <Button
+            android:id="@+id/btnOk"
+            android:text="OK"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </FrameLayout>
 </layout>

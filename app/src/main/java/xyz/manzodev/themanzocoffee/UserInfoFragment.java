@@ -11,10 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import xyz.manzodev.themanzocoffee.Interface.IEditFragment;
 import xyz.manzodev.themanzocoffee.Models.User;
 import xyz.manzodev.themanzocoffee.databinding.FragmentUserInfoBinding;
 
-public class UserInfoFragment extends Fragment {
+public class UserInfoFragment extends Fragment implements IEditFragment {
 
 
     FragmentUserInfoBinding fragmentUserInfoBinding;
@@ -35,7 +36,32 @@ public class UserInfoFragment extends Fragment {
         fragmentUserInfoBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_user_info,container,false);
         fragmentUserInfoBinding.setUser(user);
         fragmentUserInfoBinding.setIMainActivity((IMainActivity)getContext());
+        //todo OK :  name+phone onClick -> inflate DialogFragment , tao 1 interface de lay du lieu
+        fragmentUserInfoBinding.layoutName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editName();
+            }
+        });
         return fragmentUserInfoBinding.getRoot();
     }
 
+    void editName(){
+        Bundle bundle = new Bundle();
+        bundle.putString("title","Edit Name");
+        bundle.putString("data",fragmentUserInfoBinding.getUser().name);
+
+        EditDialogFragment editDialogFragment = new EditDialogFragment();
+        editDialogFragment.setArguments(bundle);
+        editDialogFragment.setTargetFragment(this,1432);
+        //todo OK chuyen tag sang string
+        editDialogFragment.show(getFragmentManager(),getString(R.string.dialog_fragment_edit));
+    }
+
+    @Override
+    public void onDataBack(String data) {
+        Log.d("OK", "onDataBack: " + data);
+        fragmentUserInfoBinding.getUser().setName(data);
+        fragmentUserInfoBinding.getIMainActivity().updateUser(user);
+    }
 }
